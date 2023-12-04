@@ -68,6 +68,8 @@ FROM `departments`;
 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
 ``` MYSQL
-
+SELECT COUNT(*) as `no_phone_number` 
+FROM `teachers`
+WHERE `phone` IS NULL;
 
 ```
