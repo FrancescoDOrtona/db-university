@@ -42,7 +42,10 @@ AND `year` = 1;
 20/06/2020 (21)
 
 ``` MYSQL
-
+SELECT * 
+FROM `exams`
+WHERE `date` = '2020-06-20'
+AND `hour` > '14%';
 
 ```
 
