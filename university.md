@@ -3,8 +3,7 @@
 ``` MYSQL
 SELECT *
 FROM `students`
-WHERE `date_of_birth` 
-LIKE '1990-%';
+WHERE YEAR(`date_of_birth`) = 1990 ;
 
 ```
 2. Selezionare tutti i corsi che valgono più di 10 crediti (479)
@@ -61,7 +60,8 @@ WHERE `level` = 'magistrale';
 7. Da quanti dipartimenti è composta l'università? (12)
 
 ``` MYSQL
-
+SELECT COUNT(*) as `departments_number` 
+FROM `departments`;
 
 ```
 
