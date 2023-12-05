@@ -43,7 +43,11 @@ GROUP BY `department_id`;
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
 
 ``` MYSQL 
-
+SELECT `students`.`id`, `degrees`.`name` AS `degree_name`, CONCAT(`students`.`name`, '  ', `students`.`surname`) AS `student_fullname`
+FROM `degrees`
+INNER JOIN `students`
+ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
 
 ```
 
