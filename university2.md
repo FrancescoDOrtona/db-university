@@ -31,7 +31,9 @@ ORDER BY `exam` ASC;
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
 
 ``` MYSQL 
-
+SELECT COUNT(*) as `degrees_for_department`, `department_id` 
+FROM `degrees`
+GROUP BY `department_id`;
 
 ```
 
