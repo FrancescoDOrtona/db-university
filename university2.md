@@ -12,7 +12,9 @@ GROUP BY `year_of_enrolment`;
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
 ``` MYSQL 
-
+SELECT COUNT(*) as `same_office`, `office_address`
+FROM `teachers`
+GROUP BY `office_address`;
 
 ```
 
