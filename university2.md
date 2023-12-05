@@ -3,7 +3,9 @@
 1. Contare quanti iscritti ci sono stati ogni anno
 
 ``` MYSQL 
-
+SELECT COUNT(*) as `enrolments_every_year`, YEAR(`enrolment_date`) as `year_of_enrolment`
+FROM `students`
+GROUP BY `year_of_enrolment`;
 
 ```
 
