@@ -21,7 +21,10 @@ GROUP BY `office_address`;
 3. Calcolare la media dei voti di ogni appello d'esame
 
 ``` MYSQL 
-
+SELECT `exam_id` ,COUNT(*) as `exam`, AVG(`vote`) as `avg_vote` 
+FROM `exam_student`
+GROUP BY `exam_id`  
+ORDER BY `exam` ASC;
 
 ```
 
