@@ -82,7 +82,13 @@ sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
 nome
 
 ``` MYSQL 
-
+SELECT `students`.`name`, `students`.`surname`, `degrees`.`name` AS `degree_name`, `departments`.`name` AS `department_name` 
+FROM `departments`
+INNER JOIN `degrees`
+ON `degrees`.`department_id` = `departments`.`id`
+INNER JOIN `students`
+ON `students`.`degree_id` = `degrees`.`id`  
+ORDER BY `students`.`surname` ASC , `students`.`name` ASC;
 
 ```
 
