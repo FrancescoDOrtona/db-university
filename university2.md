@@ -110,7 +110,17 @@ ON `teachers`.`id` = `course_teacher`.`teacher_id`;
 Matematica (54)
 
 ``` MYSQL 
-
+SELECT DISTINCT CONCAT(`teachers`.`name`,' ',`teachers`.`surname`) AS `teacher_fullname`, `departments`.`name` AS `department_name` 
+FROM `departments`
+INNER JOIN `degrees`
+ON `degrees`.`department_id` = `departments`.`id`
+INNER JOIN `courses`
+ON `courses`.`degree_id` = `degrees`.`id`
+INNER JOIN `course_teacher`
+ON `courses`.`id` = `course_teacher`.`course_id`
+INNER JOIN `teachers`
+ON `teachers`.`id` = `course_teacher`.`teacher_id`
+WHERE `department_id` = 5;
 
 ```
 
