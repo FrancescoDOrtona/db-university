@@ -55,7 +55,12 @@ WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
 Neuroscienze
 
 ``` MYSQL 
-
+SELECT `degrees`.*, `degrees`.`name` AS `degree_name` 
+FROM `degrees`
+INNER JOIN `departments`
+ON `degrees`.`department_id` = `departments`.`id`
+WHERE `degrees`.`level` = 'magistrale'
+AND `departments`.`name` = 'Dipartimento di Neuroscienze';
 
 ```
 
